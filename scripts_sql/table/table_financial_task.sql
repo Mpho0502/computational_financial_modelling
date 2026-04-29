@@ -1,3 +1,4 @@
+--Create the finacial tasks table
 IF OBJECT_ID('dbo.financial_tasks', 'U') IS NOT NULL
     DROP TABLE dbo.financial_tasks;
 GO
@@ -11,3 +12,5 @@ CREATE TABLE dbo.financial_tasks (
     Frequency   INT DEFAULT 1     
 );
 GO
+
+--Insert column names and their values into the table
