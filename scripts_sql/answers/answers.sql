@@ -1,6 +1,11 @@
-/* PRACTICAL ASSESSMENT QUESTIONS AND FORMULAS:
-   1.  Simple Interest: I = P * r * t
-   2.  Annual Compound: A = P * (1 + r)^n
+/* PRACTICAL ASSESSMENT QUESTIONS AND FORMULAS:*/
+	/*1.  Simple Interest: I = P * r * t*/
+	SELECT 
+		Principal * Annual_Rate * Term_Years AS simple_interest
+	FROM [financial_engineering_db].[dbo].[financial_tasks]
+	WHERE Task_ID = '1'
+
+  /* 2.  Annual Compound: A = P * (1 + r)^n
    3.  Hire Purchase Installment: Monthly = [P * (1 + r * t)] / 36
    4.  Inflation Projection: A = P * (1 + i)^n
    5.  Reducing Balance Depreciation: A = P * (1 - i)^n
