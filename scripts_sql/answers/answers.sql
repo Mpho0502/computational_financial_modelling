@@ -17,8 +17,13 @@
 	FROM [financial_engineering_db].[dbo].[financial_tasks]
 	WHERE Task_ID = '3'
 	
-  /* 4.  Inflation Projection: A = P * (1 + i)^n
-   5.  Reducing Balance Depreciation: A = P * (1 - i)^n
+   /* 4.  Inflation Projection: A = P * (1 + i)^n */
+   SELECT 
+		CAST((Principal * POWER( 1 + Annual_Rate, Term_Years)) AS DECIMAL (10,2))  AS inflation
+   FROM [financial_engineering_db].[dbo].[financial_tasks]
+   WHERE Task_ID = '4'
+
+   /* 5.  Reducing Balance Depreciation: A = P * (1 - i)^n
    6.  Quarterly Compound: A = P * (1 + r/4)^(4 * n)
    7.  Monthly Loan Accrual: I = [P * (1 + r/12)^12] - P
    8.  Doubling Time (Simple): t = 1 / r
