@@ -53,5 +53,8 @@
    FROM [financial_engineering_db].[dbo].[financial_tasks]
    WHERE Task_ID = '9'
 
-   /* 10. Semi-Annual Growth: A = P * (1 + r/2)^(2 * n)
-*/
+   /* 10. Semi-Annual Growth: A = P * (1 + r/2)^(2 * n) */
+   SELECT 
+		CAST((Principal * POWER((1 + Annual_Rate/2),(2 * Term_Years))) AS DECIMAL (10,2))  semi_annual_growth
+   FROM [financial_engineering_db].[dbo].[financial_tasks]
+   WHERE Task_ID = '10'
