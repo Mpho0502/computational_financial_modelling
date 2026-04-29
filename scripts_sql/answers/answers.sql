@@ -11,8 +11,13 @@
    FROM [financial_engineering_db].[dbo].[financial_tasks]
    WHERE Task_ID = '2'
 
-  /* 3.  Hire Purchase Installment: Monthly = [P * (1 + r * t)] / 36
-   4.  Inflation Projection: A = P * (1 + i)^n
+   /* 3.  Hire Purchase Installment: Monthly = [P * (1 + r * t)] / 36 */
+   SELECT 
+		CAST(Principal *(1 + Annual_Rate * Term_Years)/36 AS DECIMAL (10,2)) AS hire_purchase
+	FROM [financial_engineering_db].[dbo].[financial_tasks]
+	WHERE Task_ID = '3'
+	
+  /* 4.  Inflation Projection: A = P * (1 + i)^n
    5.  Reducing Balance Depreciation: A = P * (1 - i)^n
    6.  Quarterly Compound: A = P * (1 + r/4)^(4 * n)
    7.  Monthly Loan Accrual: I = [P * (1 + r/12)^12] - P
