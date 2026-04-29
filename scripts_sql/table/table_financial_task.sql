@@ -9,10 +9,10 @@ CREATE TABLE dbo.financial_tasks (
     Principal   DECIMAL(19, 4),   
     Annual_Rate  DECIMAL(19, 4),   
     Term_Years   INT,
-    Frequency   INT DEFAULT 1     
+    Frequency   INT DEFAULT 1,
+    [Load_date] DATETIME DEFAULT GETDATE()
 );
 GO
-
 --Insert column names and their values into the table
 INSERT INTO dbo.financial_tasks 
     (Task_ID, Model_Name, Principal, Annual_Rate, Term_Years, Frequency)
@@ -28,7 +28,6 @@ VALUES
     (9, 'Effective Annual Rate', 1.00, 0.132, 1, 12),
     (10, 'Semi-Annual Growth', 2500000.00, 0.15, 10, 2);
 GO
-
 --Show the financial tasks table
 SELECT 
 *
