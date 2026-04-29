@@ -28,3 +28,8 @@ VALUES
     (9, 'Effective Annual Rate', 1.00, 0.132, 1, 12),
     (10, 'Semi-Annual Growth', 2500000.00, 0.15, 10, 2);
 GO
+
+--Show the financial tasks table
+SELECT 
+*
+FROM [financial_engineering_db].[dbo].[financial_tasks]
