@@ -35,8 +35,13 @@
    FROM [financial_engineering_db].[dbo].[financial_tasks]
    WHERE Task_ID = '6'
 
-   /* 7.  Monthly Loan Accrual: I = [P * (1 + r/12)^12] - P
-   8.  Doubling Time (Simple): t = 1 / r
+   /* 7.  Monthly Loan Accrual: I = [P * (1 + r/12)^12] - P */
+   SELECT 
+		CAST((Principal * POWER((1 + Annual_Rate/12),(12))-Principal) AS DECIMAL (10,2))  loan_accrual
+   FROM [financial_engineering_db].[dbo].[financial_tasks]
+   WHERE Task_ID = '7'
+
+   /* 8.  Doubling Time (Simple): t = 1 / r
    9.  Effective Annual Rate: EAR = (1 + r/m)^m - 1
    10. Semi-Annual Growth: A = P * (1 + r/2)^(2 * n)
 */
