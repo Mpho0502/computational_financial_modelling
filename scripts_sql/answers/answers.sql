@@ -46,6 +46,12 @@
 		CAST(1 / Annual_Rate AS DECIMAL (10,2)) AS doubling_time
 	FROM [financial_engineering_db].[dbo].[financial_tasks]
 	WHERE Task_ID = '8'
-   /* 9.  Effective Annual Rate: EAR = (1 + r/m)^m - 1
-   10. Semi-Annual Growth: A = P * (1 + r/2)^(2 * n)
+
+   /* 9.  Effective Annual Rate: EAR = (1 + r/m)^m - 1 */
+   SELECT 
+		CAST((POWER (1 + Annual_Rate/12,12) -1) AS DECIMAL (10,2))  effective_rate
+   FROM [financial_engineering_db].[dbo].[financial_tasks]
+   WHERE Task_ID = '9'
+
+   /* 10. Semi-Annual Growth: A = P * (1 + r/2)^(2 * n)
 */
