@@ -1,7 +1,7 @@
 /* PRACTICAL ASSESSMENT QUESTIONS AND FORMULAS:*/
 	/*1.  Simple Interest: I = P * r * t*/
 	SELECT 
-		Principal * Annual_Rate * Term_Years AS simple_interest
+		CAST(Principal * Annual_Rate * Term_Years AS DECIMAL (10,2)) AS simple_interest
 	FROM [financial_engineering_db].[dbo].[financial_tasks]
 	WHERE Task_ID = '1'
 
